@@ -15,6 +15,9 @@ const notFound = require('./errors/notFound')
 
 
 
+app.use(errorHandlerMiddleware)
+app.use(notFound)
+
 
 
 const start=async()=>{
