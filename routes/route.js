@@ -3,9 +3,9 @@ const express = require('express')
 const router = express.Router()
 
 const {login , dashboard} = require('../controllers/index')
+const authenticationMiddleWare = require('../middleware/auth')
 
-
-router.get('/dashboard', dashboard)
+router.route('/dashboard').get( authenticationMiddleWare,dashboard)
 router.post('/login', login)
 
 
